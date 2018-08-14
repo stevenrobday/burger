@@ -1,0 +1,48 @@
+<div id="eatingZone">
+    <div>
+        <h1>Devour a burger</h1>
+        <ul>
+            <div>
+                {{#each burgers}} 
+                    {{#unless devoured}}
+                        <li>
+                            {{burger_name}}
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </div>
+            <div>
+                {{#each burgers}} 
+                    {{#unless devoured}}
+                        <li>
+                            <button class="devour-burger" data-id="{{id}}">DEVOUR IT</button>
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </div>
+        </ul>
+    </div>
+    <div>
+        <h1>Burgers eaten</h1>
+        <ul>
+            <div>
+            {{#each burgers}} 
+                {{#if devoured}}
+                    <li>
+                        {{burger_name}}
+                    </li>
+                {{/if}} 
+            {{/each}}
+            </div>
+        </ul>
+    </div>
+</div>
+<div id="form">
+<form id="add-burger">
+    <div>
+        <label for="burger_name">Add a burger:</label>
+        <input type="text" id="burger_name">
+  </div>
+  <button type="submit">Add Burger</button>
+</form>
+</div>
